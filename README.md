@@ -51,6 +51,9 @@ save 60 10000
 
 dbfilename dump.rdb
 dir ./
+
+unixsocket /tmp/redis.sock
+unixsocketperm 700
 ```
 
 ## More 
