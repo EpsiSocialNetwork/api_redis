@@ -12,6 +12,11 @@ yarn dev # development
 yarn start # production
 
 #sudo docker run --rm -it --name redis redis
+# sudo docker build -t react-api-poshtoop .
+# sudo docker run --rm -it --name react-api -p 8080:8080 react-api-poshtoop
+
+# sudo docker run --rm -it --name react-api -p 5225:5225 -e HOST_REDIS=192.168.1.17 react-api-poshtoop
+
 ```
 
 ## Install REDIS
