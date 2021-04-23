@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "nodemon -L",
     "start": "node index.js"
   },
   "dependencies": {
@@ -14,6 +14,7 @@
     "global": "^4.4.0",
     "helmet": "^4.3.1",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.6",
+    "redis": "^3.0.2"
   }
 }

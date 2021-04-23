@@ -2,20 +2,63 @@
 > cbarange | 29th December 2020
 ---
 
+> [doc : https://documenter.getpostman.com/view/10780597/TVzNHeRc](https://documenter.getpostman.com/view/10780597/TVzNHeRc)
+
 ## Get started
 ```bash
 yarn init
-yarn add express helmet cors dotenv morgan
-yarn dev
-yarn start
+yarn add express helmet cors dotenv morgan redis
+yarn dev # development
+yarn start # production
 
-# Post
-HMSET post:uid view INT share INT
-ZADD post:uid:react INT STRING
-SADD post:uid:like username1 username2 ... # user who liked, sismember & scard
+#sudo docker run --rm -it --name redis redis
+# sudo docker build -t react-api-poshtoop .
+# sudo docker run --rm -it --name react-api -p 8080:8080 react-api-poshtoop
 
-sudo docker run --rm -it --name redis redis
+# sudo docker run --rm -it --name react-api -p 5225:5225 -e HOST_REDIS=192.168.1.17 react-api-poshtoop
 
+```
+
+## Install REDIS
+
+```bash
+sudo apt update
+sudo apt install -y redis-server
+
+sudo systemctl status redis.service
+redis-cli ping
+
+redis-server redis_posthoop.conf
+
+# Monitoring
+redis-cli info stats
+redis-cli info server
+redis-cli info
+```
+
+**Docker**
+```bash
+# TODO
+```
+
+**Config**
+```bash
+bind 0.0.0.0
+port 6379
+requirepass Epsi2020!
+
+tcp-backlog 511
+tcp-keepalive 300
+
+save 900 1
+save 300 10
+save 60 10000
+
+dbfilename dump.rdb
+dir ./
+
+unixsocket /tmp/redis.sock
+unixsocketperm 700
 ```
 
 ## More 
@@ -60,7 +103,4 @@ ZADD set_key score value
 ZRANGE set_key 0 -1 # Retrieve all data
 
 # HSET like a struct
-
-
-
 ```
