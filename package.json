@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon -L",
-    "start": "node index.js"
+    "start": "node index.js",
+    "openapi": "npx openapi-comment-parser . openapi.json"
   },
   "dependencies": {
     "cors": "^2.8.5",
@@ -15,6 +16,8 @@
     "helmet": "^4.3.1",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
-    "redis": "^3.0.2"
+    "openapi-comment-parser": "^1.0.0",
+    "redis": "^3.0.2",
+    "swagger-ui-express": "^4.1.6"
   }
 }
